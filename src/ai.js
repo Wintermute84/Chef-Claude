@@ -6,11 +6,7 @@ You are an assistant that receives a list of ingredients that a user has and sug
 
 
 
-const token = process.env.REACT_APP_TOKEN;
-if (!token) {
-  console.log("Hugging Face token is missing");
-}
-
+const token = process.env.APP_TOKEN;
 const hf = new HfInference(token)
 
 export async function getRecipeFromMistral(ingredientsArr) {
