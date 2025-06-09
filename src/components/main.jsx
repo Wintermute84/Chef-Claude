@@ -5,7 +5,7 @@ import { getRecipeFromMistral } from '../ai'
 import React from 'react'
 
 
-export default function Main(){
+export default function Main(props){
   const [ingredients,addIngredient] = React.useState([])
   const [Recipe,showRecipe] = React.useState("")
   
@@ -31,16 +31,29 @@ export default function Main(){
           aria-label="Add Ingredient" 
           name="ingredient"
           required
+          style={
+            props.darkMode ? {
+              border:"2px solid white",
+              backgroundColor:"black",
+              color:"white"
+            } : undefined}
         />
-        <button>Add Ingredient</button>
+        <button style={
+          props.darkMode ? {
+            backgroundColor:"white",
+            color:"black"
+            } : undefined}>
+            Add Ingredient
+        </button>
       </form>
       
       <GetIngredientSection 
         ingredient = {ingredients}
         getRecipe = {getRecipe}
+        darkMode = {props.darkMode}
         />
 
-      {Recipe && <GetRecipe recipe = {Recipe}/>}
+      {Recipe && <GetRecipe recipe = {Recipe} darkMode = {props.darkMode}/>}
     
     </main>
   )

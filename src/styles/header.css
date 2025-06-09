@@ -1,5 +1,6 @@
 header{
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -11,9 +12,31 @@ header{
   height:50px;
 }
 
-header > p{
+.header-logo-container > p{
   font-size: 1.6rem;
   font-weight: 500;
-  margin-left: 10px;
   color: black;
+  margin: 28px 0 22px 10px;
+}
+
+.header-logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.display-mode-img{
+  height: 28px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  border: 1px solid rgba(134, 134, 134,0);
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 5px;
+  transition: all .1s ease-in-out;
+}
+
+.display-mode-img:hover{
+  border-color: rgba(134, 134, 134,1);
 }
