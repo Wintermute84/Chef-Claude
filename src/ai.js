@@ -6,10 +6,9 @@ You are an assistant that receives a list of ingredients that a user has and sug
 
 
 
-const token = process.env.APP_TOKEN;
-const hf = new HfInference(token)
 
 export async function getRecipeFromMistral(ingredientsArr) {
+    const hf = new HfInference(process.env.APP_TOKEN); 
     const ingredientsString = ingredientsArr.join(", ")
     try {
         const response = await hf.chatCompletion({
